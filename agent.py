@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import os
+from dotenv import load_dotenv
 from typing import Literal, Optional, Union, Any
 from google import genai
 from google.genai import types
@@ -30,6 +31,8 @@ from rich.table import Table
 
 from computers import EnvState, Computer
 
+load_dotenv()
+
 MAX_RECENT_TURN_WITH_SCREENSHOTS = 3
 PREDEFINED_COMPUTER_USE_FUNCTIONS = [
     "open_web_browser",
@@ -46,6 +49,7 @@ PREDEFINED_COMPUTER_USE_FUNCTIONS = [
     "key_combination",
     "drag_and_drop",
 ]
+
 
 
 console = Console()
